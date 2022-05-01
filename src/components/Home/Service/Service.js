@@ -2,7 +2,7 @@ import React from "react";
 import "./Service.css";
 
 const Service = ({ service }) => {
-  const { name, image, description, price } = service;
+  const { name, image, description, price, quantity } = service;
   return (
     <div className="service-container">
       <p>
@@ -13,6 +13,10 @@ const Service = ({ service }) => {
         <strong>Description: </strong>
         {description}
       </p>
+      <h4>
+        <strong>Quantity: </strong>
+        {quantity}
+      </h4>
       <p>
         <strong>Price: </strong>${price}
       </p>

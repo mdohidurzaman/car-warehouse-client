@@ -1,0 +1,37 @@
+.buyCar-heading {
+  font-size: 60px;
+  font-weight: 900;
+  padding-top: 50px;
+  color: #fff;
+}
+span {
+  color: orange;
+}
+.section-text {
+  width: 30%;
+  margin: 0 auto;
+  font-size: 18px;
+  color: #fff;
+}
+.find-car {
+  background-color: orange;
+  border: 0;
+  padding: 7px 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #fff;
+  margin: 30px 0;
+  font-weight: 700;
+}
+.buyCar-bottom {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 0;
+}
+.buy-scope {
+  color: #fff;
+}
+.buy-text {
+  color: orange;
+  font-size: 18px;
+}
