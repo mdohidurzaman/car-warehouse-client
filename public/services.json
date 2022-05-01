@@ -1,0 +1,66 @@
+[
+  {
+    "name": "New 2018 Mercedes-Benz AMG S 65",
+    "price": "24,500",
+    "quantity": "5",
+    "description": "At Audubon Dental Center, we’ve made it our mission to provide excellent and trustworthy dental care to all families.",
+    "image": "https://i.ibb.co/sQw66FB/car1.jpg"
+  },
+
+  {
+    "name": "New 2018 Audi A5 2.0T Premium Plus",
+    "price": "54,999",
+    "quantity": "7",
+    "description": "At Audubon Dental Center, we’ve made it our mission to provide excellent and trustworthy dental care to all families.",
+    "image": "https://i.ibb.co/xqr6S0q/car2.jpg"
+  },
+  {
+    "name": "2019 Lincoln Navigator",
+    "price": "290,654",
+    "quantity": "12",
+    "description": "At Audubon Dental Center, we’ve made it our mission to provide excellent and trustworthy dental care to all families.",
+    "image": "https://i.ibb.co/m4kJMxh/car3.jpg"
+  },
+  {
+    "name": "New 2016 FIAT 500 Sport",
+    "price": "22,000",
+    "quantity": "25",
+    "description": "At Audubon Dental Center, we’ve made it our mission to provide excellent and trustworthy dental care to all families.",
+    "image": "https://i.ibb.co/cFnGKcB/car4.jpg"
+  },
+  {
+    "name": "New 2016 Chevrolet Equinox LTZ",
+    "price": "30,699",
+    "quantity": "55",
+    "description": "At Audubon Dental Center, we’ve made it our mission to provide excellent and trustworthy dental care to all families.",
+    "image": "https://i.ibb.co/PMLk5sh/car5.jpg"
+  },
+  {
+    "name": "2019 Akura-TLX",
+    "price": "43,678",
+    "quantity": "55",
+    "description": "At Audubon Dental Center, we’ve made it our mission to provide excellent and trustworthy dental care to all families.",
+    "image": "https://i.ibb.co/wr6dj7d/car6.jpg"
+  },
+  {
+    "name": "2019 Lincoln Navigator",
+    "price": "290,654",
+    "quantity": "25",
+    "description": "At Audubon Dental Center, we’ve made it our mission to provide excellent and trustworthy dental care to all families.",
+    "image": "https://i.ibb.co/CwBD6kK/car7.png"
+  },
+  {
+    "name": "New 2018 Audi A5 2.0T Premium Plus",
+    "price": "54,999",
+    "quantity": "85",
+    "description": "At Audubon Dental Center, we’ve made it our mission to provide excellent and trustworthy dental care to all families.",
+    "image": "https://i.ibb.co/B4Jt0nN/car8.jpg"
+  },
+  {
+    "name": "New 2016 Chevrolet Equinox LTZ",
+    "price": "30,699",
+    "quantity": "27",
+    "description": "At Audubon Dental Center, we’ve made it our mission to provide excellent and trustworthy dental care to all families.",
+    "image": "https://i.ibb.co/S6TgFT4/car9.jpg"
+  }
+]
