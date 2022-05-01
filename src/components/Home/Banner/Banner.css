@@ -1,0 +1,23 @@
+.carosel-heading {
+  margin-bottom: 250px;
+}
+
+.sheading-thin {
+  font-size: 30px;
+  font-weight: 300;
+}
+.heading-lightblue {
+  color: #96c9ee;
+  font-size: 60px;
+  font-weight: 900;
+}
+.heading-blue {
+  color: #042b5a;
+  font-size: 60px;
+  font-weight: 900;
+}
+.heading-red {
+  color: #d5303e;
+  font-size: 60px;
+  font-weight: 900;
+}
