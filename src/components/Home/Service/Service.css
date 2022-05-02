@@ -1,5 +1,9 @@
 .service-container {
+  width: 100%;
   background-color: aliceblue;
   padding: 30px;
   border-radius: 5px;
+}
+img {
+  width: 100%;
 }

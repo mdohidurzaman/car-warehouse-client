@@ -1,0 +1,22 @@
+.heading-top {
+  font-size: 20px;
+  color: gray;
+  margin-top: 70px;
+}
+.heading-bottom {
+  font-size: 50px;
+  font-weight: 900;
+  color: orange;
+}
+.slider-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+}
+.testimonial {
+  font-size: 18px;
+  color: gray;
+}
+.degingnation {
+  color: orange;
+}

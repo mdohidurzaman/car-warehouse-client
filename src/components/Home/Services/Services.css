@@ -1,7 +1,8 @@
 .services-heading {
   padding-top: 70px;
   color: orange;
-  font-size: 60px;
+  font-size: 50px;
+  text-transform: uppercase;
   font-weight: 900;
 }
 
