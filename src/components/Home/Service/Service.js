@@ -10,27 +10,33 @@ const Service = ({ service }) => {
   };
   return (
     <div className="service-container">
-      <p>
-        <img src={image} alt="" />
-      </p>
-      <h2>{name}</h2>
-      <p>
-        <strong>Description: </strong>
-        {description}
-      </p>
-      <h4>
-        <strong>Quantity: </strong>
-        {quantity}
-      </h4>
-      <p>
-        <strong>Price: </strong>${price}
-      </p>
-      <button
-        className="btn btn-primary"
-        onClick={() => navigateToInventoryDetails(_id)}
-      >
-        Book Now
-      </button>
+      <div>
+        <p>
+          <img src={image} alt="" />
+        </p>
+        <h2>{name}</h2>
+        <p>
+          <strong>Description: </strong>
+          {description}
+        </p>
+        <h4>
+          <strong>Quantity: </strong>
+          {quantity}
+        </h4>
+        <p>
+          <strong>Description: </strong>
+          {description}
+        </p>
+        <p>
+          <strong>Price: </strong>${price}
+        </p>
+        <button
+          className="btn btn-primary"
+          onClick={() => navigateToInventoryDetails(_id)}
+        >
+          Stock Update
+        </button>
+      </div>
     </div>
   );
 };
