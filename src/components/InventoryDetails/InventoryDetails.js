@@ -20,7 +20,7 @@ const InventoryDetails = () => {
     //Send data to the server
     const url = `https://appseleven.herokuapp.com/carServices/${id}`;
     fetch(url, {
-      method: "PUT",
+      method: "PATCH",
       headers: {
         "content-type": "application/json",
       },

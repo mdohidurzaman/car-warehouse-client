@@ -5,6 +5,7 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import "./Longin.css";
 import SocialLogin from "./SocialLogin/SocialLogin";
+import Loading from "../Share/Loading/Loading";
 
 const Login = () => {
   const emailRef = useRef(" ");
@@ -13,14 +14,20 @@ const Login = () => {
   const location = useLocation();
 
   let from = location.state?.from?.pathname || "/";
-
-  const [signInWithEmailAndPassword, user] =
+  let errorElement;
+  const [signInWithEmailAndPassword, user, error, loading] =
     useSignInWithEmailAndPassword(auth);
+
+  if (loading) {
+    return <Loading></Loading>;
+  }
 
   if (user) {
     navigate(from, { replace: true });
   }
-
+  if (error) {
+    errorElement = <p className="text-danger">Error: {error?.message}</p>;
+  }
   const handleSubmit = (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
@@ -57,7 +64,7 @@ const Login = () => {
           value="Login"
         />
       </Form>
-
+      {errorElement}
       <p>
         New to Car Services ?
         <span

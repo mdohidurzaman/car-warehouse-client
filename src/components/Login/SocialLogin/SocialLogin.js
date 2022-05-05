@@ -8,15 +8,9 @@ const SocialLogin = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
   const navigate = useNavigate();
-
-  let errorMessage;
-
+  let errorElement;
   if (error) {
-    errorMessage = (
-      <div>
-        <p className="text-danger">Error: {error?.message}</p>
-      </div>
-    );
+    errorElement = <p className="text-danger">Error: {error?.message}</p>;
   }
   if (user) {
     navigate("/");
@@ -29,7 +23,7 @@ const SocialLogin = () => {
         <p className="mt-2 px-2">or</p>
         <div style={{ height: "1px" }} className="bg-primary w-50"></div>
       </div>
-      {errorMessage}
+      {errorElement}
       <div>
         <button
           onClick={() => signInWithGoogle()}
