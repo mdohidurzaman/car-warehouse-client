@@ -1,11 +1,3 @@
-.services-heading {
-  padding-top: 70px;
-  color: orange;
-  font-size: 50px;
-  text-transform: uppercase;
-  font-weight: 900;
-}
-
 .services-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -18,4 +10,29 @@ img {
 .parent {
   background-color: aliceblue;
   padding: 30px;
+}
+.stock-update {
+  display: block;
+  background-color: orange;
+  border: 0px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+.manage-btn {
+  display: block;
+  background-color: orange;
+  border: 0px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 50px auto;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+a:link {
+  text-decoration: none;
 }

@@ -9,6 +9,8 @@ import Register from "./components/Register/Register";
 import InventoryDetials from "./components/InventoryDetails/InventoryDetails";
 import RequireAuth from "./components/Login/RequireAuth/RequireAuth";
 import AddService from "./components/AddService/AddService";
+import MyItems from "./components/MyItems/MyItems";
+import ManageItems from "./components/ManageItems/ManageItems";
 
 function App() {
   return (
@@ -19,12 +21,24 @@ function App() {
         <Route path="/manage" element={<Services></Services>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
-        <Route path="/add" element={<AddService></AddService>}></Route>
+        <Route
+          path="/manageitems"
+          element={<ManageItems></ManageItems>}
+        ></Route>
+        <Route path="/myitems" element={<MyItems></MyItems>}></Route>
         <Route
           path="/service/:id"
           element={
             <RequireAuth>
               <InventoryDetials></InventoryDetials>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/add"
+          element={
+            <RequireAuth>
+              <AddService></AddService>
             </RequireAuth>
           }
         ></Route>

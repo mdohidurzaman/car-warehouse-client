@@ -14,7 +14,7 @@ const AddService = () => {
     const inventory = { name, price, quantity, image, supplier, description };
 
     //Send data to the server
-    fetch("http://localhost:5000/car-service", {
+    fetch("https://appseleven.herokuapp.com/carServices", {
       method: "POST",
       headers: {
         "content-type": "application/json",

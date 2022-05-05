@@ -24,14 +24,10 @@ const Service = ({ service }) => {
           {quantity}
         </h4>
         <p>
-          <strong>Description: </strong>
-          {description}
-        </p>
-        <p>
           <strong>Price: </strong>${price}
         </p>
         <button
-          className="btn btn-primary"
+          className="stock-update"
           onClick={() => navigateToInventoryDetails(_id)}
         >
           Stock Update

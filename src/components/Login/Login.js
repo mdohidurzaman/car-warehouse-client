@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import "./Longin.css";
+import SocialLogin from "./SocialLogin/SocialLogin";
 
 const Login = () => {
   const emailRef = useRef(" ");
@@ -57,7 +58,7 @@ const Login = () => {
         />
       </Form>
 
-      <p className=" margin-btm">
+      <p>
         New to Car Services ?
         <span
           className="text-primary"
@@ -67,6 +68,7 @@ const Login = () => {
           Please Register.
         </span>
       </p>
+      <SocialLogin></SocialLogin>
     </div>
   );
 };

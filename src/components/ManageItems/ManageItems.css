@@ -1,0 +1,27 @@
+.action-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stock-update {
+  display: block;
+  background-color: orange;
+  border: 0px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+.delete-item {
+  display: block;
+  background-color: red;
+  border: 0px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}

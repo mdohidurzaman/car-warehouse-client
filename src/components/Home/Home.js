@@ -17,7 +17,7 @@ const Home = () => {
       <Banner></Banner>
       <div className="services-container">
         {inventories.slice(0, 6).map((inventory) => (
-          <div className="parent">
+          <div className="parent" key={inventory._id}>
             <p>
               <img src={inventory.image} alt="" />
             </p>
@@ -34,18 +34,18 @@ const Home = () => {
               <strong>Price: </strong>${inventory.price}
             </p>
             <button
-              className="btn btn-primary"
+              className="stock-update"
               onClick={() => navigateToInventoryDetails(inventory._id)}
             >
               Stock Update
             </button>
           </div>
         ))}
-        <div>
-          <Link to="/manage">
-            <button>Manage Invertories</button>
-          </Link>
-        </div>
+      </div>
+      <div>
+        <Link to="/manage">
+          <button className="manage-btn">Manage Invertories</button>
+        </Link>
       </div>
       <BuyCar></BuyCar>
       <Testimonial></Testimonial>

@@ -1,20 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { signOut } from "firebase/auth";
 
 const Header = () => {
   const [user] = useAuthState(auth);
+  const navigate = useNavigate();
 
   const handleSignOut = () => {
     signOut(auth);
+    navigate("/login");
   };
   return (
     <div>
       <Navbar
-        fixed="top"
+        // fixed="top"
         collapseOnSelect
         expand="lg"
         bg="light"
@@ -24,37 +26,23 @@ const Header = () => {
           <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
+            <Nav className="me-auto"></Nav>
+            <Nav>
               <Nav.Link as={Link} to="/">
                 Home
               </Nav.Link>
               <Nav.Link as={Link} to="/manage">
                 Manage Invertory
               </Nav.Link>
-              <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-            <Nav>
               {user ? (
                 <Nav>
-                  <Nav.Link as={Link} to="/manage">
+                  <Nav.Link as={Link} to="/manageitems">
                     Mansge Item
                   </Nav.Link>
                   <Nav.Link as={Link} to="/add">
                     Add Item
                   </Nav.Link>
-                  <Nav.Link as={Link} to="/myitem">
+                  <Nav.Link as={Link} to="/myitems">
                     My Item
                   </Nav.Link>
                   <button

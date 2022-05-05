@@ -4,7 +4,7 @@ const useInventories = () => {
   const [inventories, setInventories] = useState([]);
 
   useEffect(() => {
-    fetch("https://appseleven.herokuapp.com/car-service")
+    fetch("https://appseleven.herokuapp.com/carServices")
       .then((res) => res.json())
       .then((data) => setInventories(data));
   }, []);
