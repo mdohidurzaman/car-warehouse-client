@@ -4,32 +4,31 @@ import "./InventoryDetails.css";
 
 const InventoryDetails = () => {
   const { id } = useParams();
-  const [inventory, setInventory] = useState({});
+  const [inventory, setInventory] = useState([]);
 
   useEffect(() => {
     const url = `https://appseleven.herokuapp.com/carServices/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setInventory(data));
-  }, [id]);
+  }, [id, inventory]);
 
-  const handleDelevered = (_id) => {
-    const dataQuantity = inventory.quantity;
-    const newQuantity = parseInt(dataQuantity) - 1;
+  const handleDelevered = () => {
+    const quantity = inventory.quantity - 1;
 
-    //Send data to the server
+    //send data to server
     const url = `https://appseleven.herokuapp.com/carServices/${id}`;
     fetch(url, {
       method: "PATCH",
       headers: {
-        "content-type": "application/json",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(newQuantity),
+      body: JSON.stringify(quantity),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("Success", data);
-        alert("Your quantity is successfuly updated!!");
+        console.log(data);
+        alert("Your data is successfuly updated!!");
       });
   };
 

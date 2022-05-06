@@ -6,12 +6,21 @@ const AddService = () => {
   const handleAddInventory = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
+    const email = event.target.email.value;
     const price = event.target.price.value;
     const quantity = event.target.quantity.value;
     const image = event.target.image.value;
     const description = event.target.description.value;
     const supplier = event.target.supplier.value;
-    const inventory = { name, price, quantity, image, supplier, description };
+    const inventory = {
+      name,
+      email,
+      price,
+      quantity,
+      image,
+      supplier,
+      description,
+    };
 
     //Send data to the server
     fetch("https://appseleven.herokuapp.com/carServices", {
@@ -35,6 +44,7 @@ const AddService = () => {
       </h2>
       <Form onSubmit={handleAddInventory}>
         <input type="text" name="name" id="" placeholder="Name" required />
+        <input type="email" name="email" id="" placeholder="Email" required />
 
         <input
           type="text"
