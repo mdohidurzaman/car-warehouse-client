@@ -64,7 +64,7 @@ const Login = () => {
           value="Login"
         />
       </Form>
-      {errorElement}
+
       <p>
         New to Car Services ?
         <span
@@ -74,6 +74,7 @@ const Login = () => {
         >
           Please Register.
         </span>
+        {errorElement}
       </p>
       <SocialLogin></SocialLogin>
     </div>
