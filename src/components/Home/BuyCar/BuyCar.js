@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import bg1 from "../../../images/bg1.jpg";
 import "./BuyCar.css";
 
@@ -18,7 +19,9 @@ const BuyCar = () => {
           Our service facility is independently owned and operated providing
           full-service repair and maintenance services.
         </p>
-        <button className="find-car">Find Your Car</button>
+        <Link to={"/manage"}>
+          <button className="find-car">Find Your Car</button>
+        </Link>
       </div>
       <div className="buyCar-bottom">
         <div className="single-item">

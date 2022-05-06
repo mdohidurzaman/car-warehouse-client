@@ -58,11 +58,9 @@ const Login = () => {
           id=""
           placeholder="Your Password"
         />
-        <input
-          className="login-btn w-25 mx-auto d-block"
-          type="submit"
-          value="Login"
-        />
+        <button className="login-btn mx-auto mb-3 d-block w-25 py-2">
+          Login
+        </button>
       </Form>
 
       <p>

@@ -23,12 +23,9 @@ input:focus {
   font-weight: 900;
   margin-bottom: 50px;
 }
-.login-btn {
+input .login-btn {
   background-color: orange;
   border: 0px;
   color: #fff;
   font-size: 20px;
 }
-/* .margin-btm {
-  margin-bottom: 300px;
-} */

@@ -12,6 +12,7 @@ import AddService from "./components/AddService/AddService";
 import MyItems from "./components/MyItems/MyItems";
 import ManageItems from "./components/ManageItems/ManageItems";
 import NotFound from "./components/NotFount/NotFound";
+import Blog from "./components/Blog/Blog";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

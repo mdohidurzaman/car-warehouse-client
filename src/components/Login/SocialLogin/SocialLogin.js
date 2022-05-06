@@ -19,19 +19,24 @@ const SocialLogin = () => {
   return (
     <div>
       <div className="d-flex align-items-center">
-        <div style={{ height: "1px" }} className="bg-primary w-50"></div>
+        <div
+          style={{ height: "1px", backgroundColor: "orange" }}
+          className="w-50"
+        ></div>
         <p className="mt-2 px-2">or</p>
-        <div style={{ height: "1px" }} className="bg-primary w-50"></div>
+        <div
+          style={{ height: "1px", backgroundColor: "orange" }}
+          className="w-50"
+        ></div>
       </div>
       {errorElement}
       <div>
         <button
           onClick={() => signInWithGoogle()}
-          style={{ width: "30%" }}
           className="manage-btn d-block mx-auto mb-3"
         >
           <img
-            style={{ width: "53px", paddingRight: "10px" }}
+            style={{ width: "35px", paddingRight: "5px", fontSize: "16px" }}
             src={google}
             alt=""
           />

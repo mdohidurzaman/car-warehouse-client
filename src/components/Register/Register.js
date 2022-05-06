@@ -54,11 +54,9 @@ const Register = () => {
           id=""
           placeholder="Your Password"
         />
-        <input
-          className="register-btn w-25 mx-auto d-block"
-          type="submit"
-          value="Register"
-        />
+        <button className="register-btn mx-auto mb-3 d-block py-2 px-5">
+          Register
+        </button>
       </form>
       {errorElement}
       <p>

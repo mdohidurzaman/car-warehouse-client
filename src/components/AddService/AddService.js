@@ -29,24 +29,48 @@ const AddService = () => {
     event.target.reset();
   };
   return (
-    <div className="contianer w-50 mx-auto login-form">
-      <h2>Please add a inventory</h2>
+    <div className="contianer w-40 mx-auto login-form">
+      <h2 style={{ color: "orange", marginBottom: "50px", fontSize: "50px" }}>
+        Please add a inventory
+      </h2>
       <Form onSubmit={handleAddInventory}>
-        <input type="text" name="name" id="" placeholder="Name" />
+        <input type="text" name="name" id="" placeholder="Name" required />
 
-        <input type="text" name="supplier" id="" placeholder="Supplier" />
+        <input
+          type="text"
+          name="supplier"
+          id=""
+          placeholder="Supplier"
+          required
+        />
 
-        <input type="number" name="price" id="" placeholder="Price" />
+        <input type="number" name="price" id="" placeholder="Price" required />
 
-        <input type="number" name="quantity" id="" placeholder="Quantity" />
-        <input type="text" name="image" id="" placeholder="Picture" />
+        <input
+          type="number"
+          name="quantity"
+          id=""
+          placeholder="Quantity"
+          required
+        />
+        <input type="text" name="image" id="" placeholder="Picture" required />
         <textarea
           type="message"
           name="description"
           placeholder="Description"
         ></textarea>
 
-        <input type="submit" value="Add inventory" />
+        <button
+          style={{
+            backgroundColor: "orange",
+            color: "#fff",
+            border: "0",
+            fontSize: "18px",
+          }}
+          className="py-2 px-5"
+        >
+          Add Inventory
+        </button>
       </Form>
     </div>
   );
