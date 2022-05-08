@@ -50,15 +50,22 @@ const AddService = () => {
       </h2>
       <Form onSubmit={handleAddInventory}>
         <input type="text" name="name" id="" placeholder="Name" required />
-        <input type="email" name="email" id="" placeholder="Email" />
+        <input type="email" name="email" id="" placeholder="Email" required />
 
         <input type="text" name="supplier" id="" placeholder="Supplier" />
 
-        <input type="number" name="price" id="" placeholder="Price" />
+        <input type="number" name="price" id="" placeholder="Price" required />
 
-        <input type="number" name="quantity" id="" placeholder="Quantity" />
+        <input
+          type="number"
+          name="quantity"
+          id=""
+          placeholder="Quantity"
+          required
+        />
         <input type="text" name="image" id="" placeholder="Picture" />
         <textarea
+          required
           type="message"
           name="description"
           placeholder="Description"
