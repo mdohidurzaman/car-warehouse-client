@@ -19,7 +19,7 @@ const BuyCar = () => {
           Our service facility is independently owned and operated providing
           full-service repair and maintenance services.
         </p>
-        <Link to={"/manage"}>
+        <Link to="/manageitems">
           <button className="find-car">Find Your Car</button>
         </Link>
       </div>

@@ -34,30 +34,36 @@ const Home = () => {
               <p>
                 <img src={inventory.image} alt="" />
               </p>
-              <h2>{inventory.name}</h2>
-              <p>
-                <strong>Description: </strong>
-                {inventory.description}
-              </p>
-              <h4>
-                <strong>Quantity: </strong>
-                {inventory.quantity}
-              </h4>
-              <p>
-                <strong>Price: </strong>${inventory.price}
-              </p>
-              <button
-                className="stock-update"
-                onClick={() => navigateToInventoryDetails(inventory._id)}
-              >
-                Stock Update
-              </button>
+              <div style={{ padding: "25px" }}>
+                <h2>{inventory.name}</h2>
+                <h5>
+                  <strong>Supplier: </strong>
+                  {inventory.supplier}
+                </h5>
+                <p>
+                  <strong>Description: </strong>
+                  {inventory.description}
+                </p>
+                <h4>
+                  <strong>Quantity: </strong>
+                  {inventory.quantity}
+                </h4>
+                <p>
+                  <strong>Price: </strong>${inventory.price}
+                </p>
+                <button
+                  className="stock-update"
+                  onClick={() => navigateToInventoryDetails(inventory._id)}
+                >
+                  Update
+                </button>
+              </div>
             </div>
           ))}
         </div>
       )}
       <div>
-        <Link to="/manage">
+        <Link to="/manageitems">
           <button className="manage-btn">Manage Invertories</button>
         </Link>
       </div>

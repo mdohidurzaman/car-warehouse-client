@@ -5,6 +5,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { signOut } from "firebase/auth";
+import "./Header.css";
 
 const Header = () => {
   const [user] = useAuthState(auth);
@@ -30,7 +31,7 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
-            <Nav>
+            <Nav style={{ color: "orange" }}>
               <Nav.Link as={Link} to="/">
                 Home
               </Nav.Link>
@@ -50,7 +51,7 @@ const Header = () => {
                   </Nav.Link>
 
                   <button
-                    className="btn btn-link text-black text-decoration-none"
+                    className="text-black text-decoration-none signout"
                     onClick={handleSignOut}
                   >
                     Signout

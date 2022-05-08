@@ -6,10 +6,11 @@ import auth from "../../firebase.init";
 import "./Longin.css";
 import SocialLogin from "./SocialLogin/SocialLogin";
 import Loading from "../Share/Loading/Loading";
+import axios from "axios";
 
 const Login = () => {
-  const emailRef = useRef(" ");
-  const passwordRef = useRef(" ");
+  const emailRef = useRef("");
+  const passwordRef = useRef("");
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -23,16 +24,23 @@ const Login = () => {
   }
 
   if (user) {
-    navigate(from, { replace: true });
+    // navigate(from, { replace: true });
   }
   if (error) {
     errorElement = <p className="text-danger">Error: {error?.message}</p>;
   }
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
+
+    const { data } = await axios.post(
+      "https://appseleven.herokuapp.com/login",
+      { email }
+    );
+    localStorage.setItem("accessToken", data.accessToken);
+    navigate(from, { replace: true });
   };
 
   const navigateToRegister = () => {
@@ -64,10 +72,10 @@ const Login = () => {
       </Form>
 
       <p>
-        New to Car Services ?
+        New to Car Warehouse ?
         <span
-          className="text-primary"
-          style={{ cursor: "pointer" }}
+          className="px-2"
+          style={{ cursor: "pointer", color: "orange" }}
           onClick={navigateToRegister}
         >
           Please Register.

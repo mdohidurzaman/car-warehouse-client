@@ -1,6 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useInventories from "../../Hooks/useInventories";
+import { MdDeleteForever } from "react-icons/md";
 import "./ManageItems.css";
 
 const ManageItems = () => {
@@ -39,35 +40,45 @@ const ManageItems = () => {
             <p>
               <img src={inventory.image} alt="" />
             </p>
-            <h2>{inventory.name}</h2>
-            <p>
-              <strong>Description: </strong>
-              {inventory.description}
-            </p>
-            <h4>
-              <strong>Quantity: </strong>
-              {inventory.quantity}
-            </h4>
-            <p>
-              <strong>Price: </strong>${inventory.price}
-            </p>
-            <div className="action-btn">
-              <button
-                className="stock-update"
-                onClick={() => navigateToInventoryDetails(inventory._id)}
-              >
-                Stock Update
-              </button>
-              <button
-                className="delete-item"
-                onClick={() => handleItemDelete(inventory._id)}
-              >
-                Delete Item
-              </button>
+            <div style={{ padding: "25px" }}>
+              <h2>{inventory.name}</h2>
+              <h5>
+                <strong>Supplier: </strong>
+                {inventory.supplier}
+              </h5>
+              <p>
+                <strong>Description: </strong>
+                {inventory.description}
+              </p>
+              <h4>
+                <strong>Quantity: </strong>
+                {inventory.quantity}
+              </h4>
+              <p>
+                <strong>Price: </strong>${inventory.price}
+              </p>
+              <div className="action-btn">
+                <button
+                  className="stock-update"
+                  onClick={() => navigateToInventoryDetails(inventory._id)}
+                >
+                  Update
+                </button>
+                <MdDeleteForever
+                  size={50}
+                  className="delete-icon"
+                  onClick={() => handleItemDelete(inventory._id)}
+                >
+                  Delete Item
+                </MdDeleteForever>
+              </div>
             </div>
           </div>
         ))}
       </div>
+      <Link to="/add">
+        <button className="manage-btn">Add New Item</button>
+      </Link>
     </div>
   );
 };

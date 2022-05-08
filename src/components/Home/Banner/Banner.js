@@ -14,7 +14,7 @@ const Banner = () => {
           <h1>
             <span className="heading-thin"> UNLOCK</span>
             <br />
-            <sapn className="heading-lightblue"> THE POTENTIAL</sapn>
+            <span className="heading-lightblue"> THE POTENTIAL</span>
           </h1>
         </Carousel.Caption>
       </Carousel.Item>

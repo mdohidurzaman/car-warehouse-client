@@ -7,9 +7,9 @@ import SocialLogin from "../Login/SocialLogin/SocialLogin";
 import Loading from "../Share/Loading/Loading";
 
 const Register = () => {
-  const [createUserWithEmailAndPassword, user, error, loading] =
+  const [createUserWithEmailAndPassword, user, loading] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-  let errorElement;
+
   const navigate = useNavigate();
   const navigateToLogin = () => {
     navigate("/login");
@@ -18,9 +18,7 @@ const Register = () => {
   if (loading) {
     return <Loading></Loading>;
   }
-  if (error) {
-    errorElement = <p className="text-danger">Error: {error?.message}</p>;
-  }
+
   if (user) {
     navigate("/");
   }
@@ -58,12 +56,11 @@ const Register = () => {
           Register
         </button>
       </form>
-      {errorElement}
       <p>
         Have an Account ?{" "}
         <span
-          className="text-primary"
-          style={{ cursor: "pointer" }}
+          className=""
+          style={{ cursor: "pointer", color: "orange" }}
           onClick={navigateToLogin}
         >
           Please Login.

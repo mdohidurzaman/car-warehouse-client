@@ -8,7 +8,7 @@ const NotFound = () => {
         style={{
           fontSize: "70px",
           fontWeight: "900",
-          color: "gray",
+          color: "#FF626D",
           paddingTop: "30px",
         }}
       >
@@ -18,7 +18,7 @@ const NotFound = () => {
         style={{
           fontSize: "25px",
           fontWeight: "700",
-          color: "gray",
+          color: "#7CDADA",
           paddingBottom: "30px",
         }}
       >

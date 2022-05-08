@@ -2,6 +2,7 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import { MdDeleteForever } from "react-icons/md";
 import useInventories from "../../Hooks/useInventories";
 import "./MyItems.css";
 
@@ -44,31 +45,36 @@ const MyItems = () => {
               <p>
                 <img src={myitem.image} alt="" />
               </p>
-              <h2>{myitem.name}</h2>
-              <p>
-                <strong>Description: </strong>
-                {myitem.description}
-              </p>
-              <h4>
-                <strong>Quantity: </strong>
-                {myitem.quantity}
-              </h4>
-              <p>
-                <strong>Price: </strong>${myitem.price}
-              </p>
-              <div className="action-btn">
-                <button
-                  className="stock-update"
-                  onClick={() => navigateToInventoryDetails(myitem._id)}
-                >
-                  Stock Update
-                </button>
-                <button
-                  className="delete-item"
-                  onClick={() => handleItemDelete(inventories._id)}
-                >
-                  Delete Item
-                </button>
+              <div style={{ padding: "25px" }}>
+                <h2>{myitem.name}</h2>
+                <h5>
+                  <strong>Supplier: </strong>
+                  {myitem.supplier}
+                </h5>
+                <p>
+                  <strong>Description: </strong>
+                  {myitem.description}
+                </p>
+                <h4>
+                  <strong>Quantity: </strong>
+                  {myitem.quantity}
+                </h4>
+                <p>
+                  <strong>Price: </strong>${myitem.price}
+                </p>
+                <div className="action-btn">
+                  <button
+                    className="stock-update"
+                    onClick={() => navigateToInventoryDetails(myitem._id)}
+                  >
+                    Update
+                  </button>
+                  <MdDeleteForever
+                    size={50}
+                    className="delete-icon"
+                    onClick={() => handleItemDelete(myitem._id)}
+                  ></MdDeleteForever>
+                </div>
               </div>
             </div>
           ))}

@@ -23,7 +23,7 @@ const InventoryDetails = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(quantity),
+      body: JSON.stringify({ quantity }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -36,17 +36,16 @@ const InventoryDetails = () => {
     event.preventDefault();
     const inputQuantity = event.target.number.value;
     const dataQuantity = inventory.quantity;
-    const newQuantity = parseInt(inputQuantity) + parseInt(dataQuantity);
-    const increaseInventory = { newQuantity };
+    const quantity = parseInt(inputQuantity) + parseInt(dataQuantity);
 
     //Send data to the server
     const url = `https://appseleven.herokuapp.com/carServices/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
-        "content-type": "application/json",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(increaseInventory),
+      body: JSON.stringify({ quantity }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -62,19 +61,25 @@ const InventoryDetails = () => {
         <p>
           <img src={inventory.image} alt="" />
         </p>
-        <h2>{inventory.name}</h2>
-        <p>
-          <strong>Description:</strong>
-          {inventory.description}
-        </p>
-        <h4>
-          Quantity:
-          {inventory.quantity}
-        </h4>
-        <p>
-          <strong>Price: $</strong>
-          {inventory.price}
-        </p>
+        <div style={{ padding: "25px" }}>
+          <h2>{inventory.name}</h2>
+          <h5>
+            <strong>Supplier: </strong>
+            {inventory.supplier}
+          </h5>
+          <p>
+            <strong>Description:</strong>
+            {inventory.description}
+          </p>
+          <h4>
+            Quantity:
+            {inventory.quantity}
+          </h4>
+          <p>
+            <strong>Price: $</strong>
+            {inventory.price}
+          </p>
+        </div>
       </div>
       <Link to="#">
         <button
@@ -98,7 +103,7 @@ const InventoryDetails = () => {
         </form>
       </div>
       <div>
-        <Link to="/manage">
+        <Link to="/manageitems">
           <button className="manage-btn">Manage Invertories</button>
         </Link>
       </div>

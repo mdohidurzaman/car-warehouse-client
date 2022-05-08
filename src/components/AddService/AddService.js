@@ -1,8 +1,12 @@
 import React from "react";
 import { Form } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 import "./AddService.css";
 
 const AddService = () => {
+  const [user] = useAuthState(auth);
+  const email = user.email;
   const handleAddInventory = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
@@ -23,10 +27,12 @@ const AddService = () => {
     };
 
     //Send data to the server
-    fetch("https://appseleven.herokuapp.com/carServices", {
+    const url = `https://appseleven.herokuapp.com/carServices?email=${email}`;
+    fetch(url, {
       method: "POST",
       headers: {
-        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(inventory),
     })
@@ -44,26 +50,14 @@ const AddService = () => {
       </h2>
       <Form onSubmit={handleAddInventory}>
         <input type="text" name="name" id="" placeholder="Name" required />
-        <input type="email" name="email" id="" placeholder="Email" required />
+        <input type="email" name="email" id="" placeholder="Email" />
 
-        <input
-          type="text"
-          name="supplier"
-          id=""
-          placeholder="Supplier"
-          required
-        />
+        <input type="text" name="supplier" id="" placeholder="Supplier" />
 
-        <input type="number" name="price" id="" placeholder="Price" required />
+        <input type="number" name="price" id="" placeholder="Price" />
 
-        <input
-          type="number"
-          name="quantity"
-          id=""
-          placeholder="Quantity"
-          required
-        />
-        <input type="text" name="image" id="" placeholder="Picture" required />
+        <input type="number" name="quantity" id="" placeholder="Quantity" />
+        <input type="text" name="image" id="" placeholder="Picture" />
         <textarea
           type="message"
           name="description"

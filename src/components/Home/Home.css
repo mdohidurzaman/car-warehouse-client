@@ -9,7 +9,6 @@ img {
 }
 .parent {
   background-color: aliceblue;
-  padding: 30px;
 }
 .stock-update {
   display: block;
@@ -35,4 +34,17 @@ img {
 }
 a:link {
   text-decoration: none;
+}
+/* responsive */
+@media only screen and (max-width: 750px) {
+  .services-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 576px) {
+  .services-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
